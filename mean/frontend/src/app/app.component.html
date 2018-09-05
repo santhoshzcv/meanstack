@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <p>
+    NAME: <input type="text" placeholder="enter name" [(ngModel)]="name">
+    AGE: <input type="text" placeholder="enter name" [(ngModel)]="age">
+    GENDER: <input type="text" placeholder="enter name" [(ngModel)]="gender">
+    ADDRESS: <input type="text" placeholder="enter name" [(ngModel)]="address">
+  </p>
+</div>
+<hr>
+<button class="btn btn-primary" (click)="onAdd()">ADD</button>
+<button class="btn btn-primary" (click)="onGet()">Read</button>
+<button class="btn btn-primary" (click)="onDelete()">DELETE</button>
+<button class="btn btn-primary" (click)="onUpdate()">Update</button>
