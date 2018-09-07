@@ -50,8 +50,8 @@ router.get('/list', function(req, res, next) {
   });
 */
 router.put('/update/:name', (req, res) => {
-  console.log('PATCH IS WORKING!');
-  customer.findOneAndUpdate({ name: req.params.name }, req.body.data, { new: true }, (err, customer) => {
+  console.log('put IS WORKING!');
+  customer.findOneAndUpdate({ name: req.params.name }, req.body.data, { new: true }, (err, doc) => {
   if (err) {
   res.status(500).send({
   success: false,
@@ -60,12 +60,13 @@ router.put('/update/:name', (req, res) => {
   } else {
   res.status(200).send({
     success:true,
-  customer
+    message:"sucessully updated",
+    result:doc
   });
   }
   })
   });
-  
+
   router.delete('/delete/:name', function(req, res) {
     customer.remove({name : req.params.name}, (err, customer) => {
 		res.json({ message: "customer sucessfully deleted", customer });
